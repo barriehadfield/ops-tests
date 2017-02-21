@@ -8,6 +8,12 @@ GIT
       mutations
       opal-activesupport
 
+GIT
+  remote: https://github.com/ruby-hyperloop/hyper-store.git
+  revision: cc20fa9010b418dd3788adcba3630ef37cb357d8
+  specs:
+    hyper-store (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -232,6 +238,7 @@ DEPENDENCIES
   hyper-rails
   hyper-react
   hyper-router
+  hyper-store!
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
