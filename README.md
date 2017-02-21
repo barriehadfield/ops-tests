@@ -14,7 +14,7 @@
 + add `require 'hyper-operation'` to components.rb
 + add `mount Hyperloop::Engine => "/hyperloop_engine"` to routes.rb
 
-## Some bad architecture
+## A bad Component
 
 Take the simple Component below that displays an initial discount then gives the user the option of taking a once only 'Lucky Dip' which will either increase or decrease their discount.
 
@@ -39,11 +39,13 @@ end
 
 The Component works fine but there are two fundamental problems:
 
-+ Firstly, the amount of the discount state is tied to the Component. This is a problem as we might have other Components on the page which need to also see and interact with the discount. We need a better place to keep application state than in our Components.
++ Firstly, the discount (state) is tied to the Component itself. This is a problem as we might have other Components on the page which need to also see and interact with the discount. We need a better place to keep application state than in our Components.
 + Our business logic (discounts start at 30% and the lucky dip increases or decreases by 5%) is all wrapped up with our presentational code. This makes our application fragile and difficult to evolve. Our application logic should be separate from our display logic.
 
-We will fix these problems but first implementing a Hyperloop Store to keep our discount state and then implementing a Hyperloop Operation to mutate the discount state.
+We will fix these problems but first implementing a Hyperloop Store to keep our discount state and then implementing a Hyperloop Operation to mutate the discount state and encapsulate our business logic.
 
 ## Adding a Store
+
+Hyperloop Stores (similar to Flux Stores) exist to hold application state. Components read state from Stores and state is mutated (changed) when messsages are dispatched XXXX
 
 ## Adding an Operation
