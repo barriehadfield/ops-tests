@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# gem 'hyper-operation', git: 'https://github.com/ruby-hyperloop/hyper-operation.git'
+gem 'hyper-operation', git: 'https://github.com/ruby-hyperloop/hyper-operation.git'
 gem 'hyper-rails'
 gem 'opal-rails'
 gem 'opal-browser'

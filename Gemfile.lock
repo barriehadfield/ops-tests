@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/ruby-hyperloop/hyper-operation.git
+  revision: 757961f1c78d4f0899716e9b3890bbb2f8e0a8b5
+  specs:
+    hyper-operation (0.1.0)
+      activerecord (>= 0.3.0)
+      hyper-react
+      mutations
+      opal-activesupport
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -96,6 +106,8 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
+    mutations (0.8.0)
+      activesupport
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
@@ -216,6 +228,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   hyper-mesh
+  hyper-operation!
   hyper-rails
   hyper-react
   hyper-router
