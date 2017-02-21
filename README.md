@@ -1,15 +1,15 @@
 ## Setup
-`rails new App`
-`rails g controller Home`
-`gem 'hyper-rails'`
-`bundle`
-`rails g hyperloop:install --all`
-`bundle update`
++ `rails new App`
++ `rails g controller Home`
++ `gem 'hyper-rails'`
++ `bundle`
++ `rails g hyperloop:install --all`
++ `bundle update`
 
 + Is there dependancy on HyperMesh?
 
-add `require 'hyper-operation'` to components.rb
-add `mount Hyperloop::Engine => "/hyperloop_engine"` to routes.rb
++ add `require 'hyper-operation'` to components.rb
++ add `mount Hyperloop::Engine => "/hyperloop_engine"` to routes.rb
 
 ## Usage
 
