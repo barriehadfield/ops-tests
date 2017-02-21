@@ -36,3 +36,5 @@ module Components
   end
 end
 ```
+
+Adding a Store:
