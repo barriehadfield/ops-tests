@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  def ops_tests
+  def lucky_dip
     render_component
   end
 end

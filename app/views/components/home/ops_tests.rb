@@ -1,22 +1,18 @@
-module Components
-  module Home
+class LuckyDip < React::Component::Base
 
-    class OpsTests < React::Component::Base
+  define_state discount: 30
+  define_state lucky_dip_taken: false
 
-      define_state name: "Sally"
-
-      def render
-        div do
-          h1 {"Hello #{state.name}"}
-          BUTTON { "Test me" }.on(:click) do
-            state.name! "Frank"
-            # ChangeName.run(name: 'Frank')
-          end
-        end
-      end
-
+  def render
+    div do
+      h1 {"Your discount is #{state.discount}%"}
+      BUTTON { "Lucky Dip" }.on(:click) do
+        state.discount! (state.discount + rand(-5..5))
+        state.lucky_dip_taken! true
+      end unless state.lucky_dip_taken
     end
   end
+
 end
 
 # class ChangeName < Hyperloop::Operation
