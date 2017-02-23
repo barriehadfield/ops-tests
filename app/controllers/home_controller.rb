@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  def lucky_dip
+  def offer_lucky_dip
     render_component
   end
 end

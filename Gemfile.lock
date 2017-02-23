@@ -1,16 +1,6 @@
 GIT
-  remote: https://github.com/ruby-hyperloop/hyper-operation.git
-  revision: 757961f1c78d4f0899716e9b3890bbb2f8e0a8b5
-  specs:
-    hyper-operation (0.1.0)
-      activerecord (>= 0.3.0)
-      hyper-react
-      mutations
-      opal-activesupport
-
-GIT
   remote: https://github.com/ruby-hyperloop/hyper-store.git
-  revision: cc20fa9010b418dd3788adcba3630ef37cb357d8
+  revision: a9c73697b706d1458d271b0c55876bcb52f76954
   specs:
     hyper-store (0.1.0)
 
@@ -74,6 +64,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.17)
+    foreman (0.83.0)
+      thor (~> 0.19.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -89,8 +81,8 @@ GEM
     hyper-router (2.4.0)
       hyper-react
       opal-browser
-    i18n (0.8.0)
-    jbuilder (2.6.1)
+    i18n (0.8.1)
+    jbuilder (2.6.2)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
     jquery-rails (4.2.2)
@@ -112,8 +104,6 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
-    mutations (0.8.0)
-      activesupport
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
@@ -141,6 +131,9 @@ GEM
       opal (~> 0.10.0)
       sprockets (~> 3.0)
       tilt (>= 1.4)
+    opal_hot_reloader (0.1.0)
+      listen (~> 3.0)
+      websocket
     paggio (0.2.6)
     puma (3.7.1)
     rack (2.0.1)
@@ -209,7 +202,7 @@ GEM
       libv8 (~> 3.16.14.15)
       ref
     thor (0.19.4)
-    thread_safe (0.3.5)
+    thread_safe (0.3.6)
     tilt (2.0.6)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
@@ -223,6 +216,7 @@ GEM
       activemodel (>= 5.0)
       debug_inspector
       railties (>= 5.0)
+    websocket (1.2.4)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -233,8 +227,8 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
+  foreman
   hyper-mesh
-  hyper-operation!
   hyper-rails
   hyper-react
   hyper-router
@@ -244,6 +238,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   opal-browser
   opal-rails
+  opal_hot_reloader
   puma (~> 3.0)
   rails (~> 5.0.1)
   react-router-rails (~> 0.13.3)

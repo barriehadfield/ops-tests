@@ -1,16 +1,36 @@
-class LuckyDip < React::Component::Base
+class OfferLuckyDip < React::Component::Base
 
-  define_state discount: 30
-  define_state lucky_dip_taken: false
+  before_mount do
+    @store = Discounter.new
+  end
 
   def render
     div do
-      h1 {"Your discount is #{state.discount}%"}
+      h1 {"Your discount is #{@store.discount}%"}
       BUTTON { "Lucky Dip" }.on(:click) do
-        state.discount! (state.discount + rand(-5..5))
-        state.lucky_dip_taken! true
-      end unless state.lucky_dip_taken
+        @store.lucky_dip!
+      end unless @store.lucky_dip_taken
     end
+  end
+
+end
+
+class Discounter < HyperStore::Base
+
+   state discount: 30
+   state lucky_dip_taken: false
+
+   def discount
+     state.discount
+   end
+
+   def lucky_dip_taken
+     state.lucky_dip_taken
+   end
+
+  def lucky_dip!
+    mutate.discount( state.discount + rand(-5..5) )
+    mutate.lucky_dip_taken true
   end
 
 end
