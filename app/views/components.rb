@@ -16,4 +16,41 @@ require 'hyper-router'
 require 'react_router'
 require 'hyper-mesh'
 require 'models'
+
+class HyperOperation
+  class << self
+    def on_dispatch(&block)
+      receivers << block
+    end
+
+    def receivers
+      @receivers ||= []
+    end
+
+    def dispatch(params = {})
+      receivers.each do |receiver|
+        receiver.call params
+      end
+    end
+  end
+
+  def dispatch(params = {})
+    self.class.receivers.each do |receiver|
+      receiver.call params
+    end
+  end
+end
+
+module Hyperloop
+  class Application
+    class Boot < HyperOperation
+      include React::IsomorphicHelpers
+
+      before_first_mount do
+        dispatch
+      end
+    end
+  end
+end
+
 require_tree './components'
