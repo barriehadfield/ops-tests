@@ -16,6 +16,7 @@ end
 # require 'react_router'
 # require 'hyper-mesh'
 require 'models'
+require_tree './components'
 
 # class HyperOperation
 #   class << self
@@ -52,5 +53,3 @@ require 'models'
 #     end
 #   end
 # end
-
-require_tree './components'
