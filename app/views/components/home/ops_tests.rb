@@ -1,4 +1,4 @@
-class Bumber < Hyperloop::Operation
+class Bumper < Hyperloop::Operation
 end
 
 
@@ -24,10 +24,10 @@ class OfferLuckyDip < React::Component::Base
       BUTTON { "Lucky Dip" }.on(:click) do
         Discounter.lucky_dip!
       end unless Discounter.lucky_dip_taken
-    end
-    BUTTON { "Bump" }.on(:click) do
-      # Hyperloop::Operation::Bumper()
+      BUTTON { "Bump" }.on(:click) do
+        # Hyperloop::Operation::Bumper()
       Bumper.run
+      end
     end
   end
 end
